@@ -11,22 +11,24 @@ NUM_WORKING_DAYS=20;
 totalEmpHrs=0;
 totalWorkingDays=0;
 
-while [[ $totalEmpHr -le $MAX_HRS_IN_MONTH && $totalWorkingDays -le $NUM_WORKING_DAYS ]]
+while [[ $totalEmpHr -le $MAX_HRS_IN_MONTH && 
+      $totalWorkingDays -le $NUM_WORKING_DAYS ]]
 do
-			((totalWorkingDays++))
-			empCheck=$(( RANDOM%3 ));
-			case $empCheck in
-							$IS_FULL_TIME)
-									empHr=8;
+	((totalWorkingDays++))
+	empCheck=$(( RANDOM%3 ));
+	case $empCheck in
+		$IS_FULL_TIME)
+			empHr=8;
+			;;
+		$IS_PART_TIME)
+			empHr=4;
+			;;
+		*)
+			empHr=0;
 									;;
-							$IS_PART_TIME)
-									empHr=4;
-									;;
-							*)
-									empHr=0;
-									;;
-			esac
-			totalEmpHrs=$(( $totalEmpHrs+$empHr ))
+	esac
+	totalEmpHrs=$(( $totalEmpHrs+$empHr ))
 done
+
 totalSalary=$(( $totalEmpHrs*$EMP_RATE_PER_HR ))
 
