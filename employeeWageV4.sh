@@ -3,7 +3,7 @@
 #CONSTANT FOR THE PROGRAM
 isPartTime=1;
 isFulltime=2
-EMP_RATE_PER_HR=20
+empRatePerHr=20
 
 empCheck=$(( RANDOM%3 ))
 case $empCheck in
@@ -17,5 +17,4 @@ case $empCheck in
 		empHrs=0;
 		;;
 esac
-
-salary=$(( $empHrs*$EMP_RATE_PER_HR ))
+salary=$(( $empHrs*$empRatePerHr ))
