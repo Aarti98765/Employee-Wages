@@ -34,3 +34,4 @@ do
 done
 
 totalSalary=$(( $totalWorkHours+$EMP_RATE_PER_HR ));
+echo "Total Salary:" $totalSalary
