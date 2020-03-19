@@ -57,3 +57,4 @@ do
 done
 	totalSalary="$( calcDailyWage $totalWorkHours )"
 	echo "Daily Wage " ${empDailyWage[@]}
+	echo $totalSalary
